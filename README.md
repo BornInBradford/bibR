@@ -1,1 +1,1 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+This is a minimal example of using R to manage and explore BiB datasets.  Please go to **BiB Data Science Education with R** (https://bib.data.education) for an online book version. 
