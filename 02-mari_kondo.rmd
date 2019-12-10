@@ -1,0 +1,62 @@
+# Mari Kondo
+
+Marie Kondo is the author of The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing. 
+
+> The best way to choose what to keep and what to throw away is to take each item in one’s hand and ask: “Does this spark joy?” If it does, keep it. If not, dispose of it. This is not only the simplest but also the most accurate yardstick by which to judge. 
+
+<div><center>
+<img src="https://zenkit.com/wp-content/uploads/2019/04/MarieKondo_SparkJoy1.gif" alt="">
+</center></div>  
+
+## Tidy your files
+
+There're a number of ways to organise data science work. The key is to set up Rproject and GitHub. Here we list two main approaches to achieve this end.  
+
+The first way is the __pull__ way where we get both Rproject and git integrated from outside - GitHub. You use the `github` function from `usethis` package and put down ("OWNER/REPO_NAME") and opt for https when you get asked on git protocol. 
+```{r eval=FALSE}
+> usethis::create_from_github("dataning/learn_usethis")
+
+Which git protocol to use? (enter 0 to exit) 
+
+1: ssh   <-- presumes that you have set up ssh keys
+2: https <-- choose this if you don't have ssh keys (or don't know if you do)
+
+Selection: 2
+● Tip: To suppress this menu in future, put
+  `options(usethis.protocol = "https")`
+  in your script or in a user- or project-level startup file, '.Rprofile'.
+  Call `usethis::edit_r_profile()` to open it for editing.
+✔ Cloning repo from 'https://github.com/dataning/learn_usethis.git' into '/Users/sushicat/Desktop/learn_usethis'
+✔ Setting active project to '/Users/sushicat/Desktop/learn_usethis'
+✔ Writing 'learn_usethis.Rproj'
+✔ Adding '.Rproj.user' to '.gitignore'
+✔ Opening '/Users/sushicat/Desktop/learn_usethis/' in new RStudio session
+✔ Setting active project to '<no active project>'
+```
+
+The second way is to imagine you're working in a random folder and you wish to set up the Rproject 
+```{r eval=FALSE}
+> library(usethis)
+> library(here)
+
+here() starts at /Users/sushicat/Dropbox/R_Me
+```
+
+```{r eval=FALSE}
+> here::here()
+[1] "/Users/sushicat/Dropbox/R_Me"
+```
+
+```{r eval=FALSE}
+> path <- file.path(here(), "learn_usethis")
+create_project(path)
+
+✔ Creating '/Users/sushicat/Dropbox/R_Me/learn_usethis/'
+✔ Setting active project to '/Users/sushicat/Dropbox/R_Me/learn_usethis'
+✔ Creating 'R/'
+✔ Writing 'learn_usethis.Rproj'
+✔ Adding '.Rproj.user' to '.gitignore'
+✔ Opening '/Users/sushicat/Dropbox/R_Me/learn_usethis/' in new RStudio session
+✔ Setting active project to '<no active project>'
+```
+

@@ -1,0 +1,97 @@
+# Public Health API
+
+Fingertips is a web platform that provides easy access to in-depth analysis of a wide range of health and health related data in thematic Profiles. All profiles can be accessed via:
+
+http://fingertips.phe.org.uk/
+
+The project was initially designed and built by the Eastern Region Public Health Observatory, and is now owned by PHE. The platform grows quickly both in functionality and content and is served by one common database called PHOLIO.
+
+Fingertips is used to create the public health outcome framework data tool, and the healthier lives application. It also underpins Health profiles, the mental health intelligence network tools, tobacco control profiles, the NCMP Data tool, NHS Health Check, National General Practice Profiles and the children and young people’s benchmarking tool among others.
+
+R package [fingertipsR](https://github.com/ropensci/fingertipsR) is to interact with Public Health England’s Fingertips data tool.
+
+Stable version from CRAN
+```{r eval=FALSE}
+install.packages("fingertipsR")
+```
+
+The latest development version from github
+```{r eval=FALSE}
+# install.packages("devtools")
+remotes::install_github("rOpenSci/fingertipsR",
+                        build_vignettes = TRUE,
+                        dependencies = "suggests")
+```
+
+This is a workflow example from the R package to demonstrate how to download data for the indicators on Healthy Life Expectancy at Birth from the Public Health Outcomes Framework profile.
+
+The profiles() function presents all of the available profiles:
+```{r eval=FALSE}
+library(fingertipsR)
+profs <- profiles()
+profs <- profs[grepl("Public Health Outcomes Framework", profs$ProfileName),]
+head(profs)
+#> # A tibble: 6 x 4
+#>   ProfileID ProfileName                 DomainID DomainName                
+#>       <int> <chr>                          <int> <chr>                     
+#> 1        19 Public Health Outcomes Fr~    1.00e6 Overarching indicators    
+#> 2        19 Public Health Outcomes Fr~    1.00e6 Wider determinants of hea~
+#> 3        19 Public Health Outcomes Fr~    1.00e6 Health improvement        
+#> 4        19 Public Health Outcomes Fr~    1.00e6 Health protection         
+#> 5        19 Public Health Outcomes Fr~    1.00e6 Healthcare and premature ~
+#> 6        19 Public Health Outcomes Fr~    1.94e9 Supporting information
+```
+
+This table shows that the ProfileID for the Public Health Outcomes Framework is 19. This can be used as an input for the indicators() function:
+```{r eval=FALSE}
+inds <- indicators(ProfileID = 19)
+print(inds[grepl("Healthy", inds$IndicatorName), c("IndicatorID", "IndicatorName")])
+# A tibble: 1 x 2
+  IndicatorID IndicatorName                          
+        <int> <fct>                                  
+1       90362 A01a - Healthy life expectancy at birth
+```
+
+Healthy Life Expectancy at Birth has the IndicatorID equal to 90362.
+
+Finally, the data can be extracted using the fingertips_data() function using that IndicatorID and filter() function in dplyr. 
+
+```{r eval=FALSE}
+df <- fingertips_data(IndicatorID = 90362)
+head(df %>% filter(AreaName == "Yorkshire and the Humber region"))
+  IndicatorID                    IndicatorName ParentCode ParentName  AreaCode
+1       90362 Healthy life expectancy at birth  E92000001    England E12000003
+2       90362 Healthy life expectancy at birth  E92000001    England E12000003
+3       90362 Healthy life expectancy at birth  E92000001    England E12000003
+4       90362 Healthy life expectancy at birth  E92000001    England E12000003
+5       90362 Healthy life expectancy at birth  E92000001    England E12000003
+6       90362 Healthy life expectancy at birth  E92000001    England E12000003
+                         AreaName AreaType    Sex      Age CategoryType Category Timeperiod
+1 Yorkshire and the Humber region   Region   Male All ages         <NA>     <NA>  2009 - 11
+2 Yorkshire and the Humber region   Region Female All ages         <NA>     <NA>  2009 - 11
+3 Yorkshire and the Humber region   Region   Male All ages         <NA>     <NA>  2010 - 12
+4 Yorkshire and the Humber region   Region Female All ages         <NA>     <NA>  2010 - 12
+5 Yorkshire and the Humber region   Region   Male All ages         <NA>     <NA>  2011 - 13
+6 Yorkshire and the Humber region   Region Female All ages         <NA>     <NA>  2011 - 13
+     Value LowerCI95.0limit UpperCI95.0limit LowerCI99.8limit UpperCI99.8limit Count
+1 60.84033         60.38649         61.29417               NA               NA    NA
+2 61.97605         61.51676         62.43533               NA               NA    NA
+3 60.90318         60.44972         61.35665               NA               NA    NA
+4 61.78648         61.30470         62.26827               NA               NA    NA
+5 60.95582         60.47015         61.44150               NA               NA    NA
+6 61.60701         61.10430         62.10971               NA               NA    NA
+  Denominator Valuenote RecentTrend ComparedtoEnglandvalueorpercentiles
+1          NA      <NA>        <NA>                               Worse
+2          NA      <NA>        <NA>                               Worse
+3          NA      <NA>        <NA>                               Worse
+4          NA      <NA>        <NA>                               Worse
+5          NA      <NA>        <NA>                               Worse
+6          NA      <NA>        <NA>                               Worse
+  ComparedtoRegionvalueorpercentiles TimeperiodSortable Newdata Comparedtogoal
+1                       Not compared           20090000    <NA>           <NA>
+2                       Not compared           20090000    <NA>           <NA>
+3                       Not compared           20100000    <NA>           <NA>
+4                       Not compared           20100000    <NA>           <NA>
+5                       Not compared           20110000    <NA>           <NA>
+6                       Not compared           20110000    <NA>           <NA>
+``` 

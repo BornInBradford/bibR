@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Public Health API | A R discussion with Born in Bradford and Bradford NHS</title>
+  <meta name="description" content="This is a minimal example for R discussion." />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Public Health API | A R discussion with Born in Bradford and Bradford NHS" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example for R discussion." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Public Health API | A R discussion with Born in Bradford and Bradford NHS" />
+  
+  <meta name="twitter:description" content="This is a minimal example for R discussion." />
+  
+
+<meta name="author" content="Ning Lu" />
+
+
+<meta name="date" content="2019-12-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="mari-kondo.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A R journal</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Mission</a></li>
+<li class="chapter" data-level="2" data-path="public-health-api.html"><a href="public-health-api.html"><i class="fa fa-check"></i><b>2</b> Public Health API</a></li>
+<li class="chapter" data-level="3" data-path="mari-kondo.html"><a href="mari-kondo.html"><i class="fa fa-check"></i><b>3</b> Mari Kondo</a><ul>
+<li class="chapter" data-level="3.1" data-path="mari-kondo.html"><a href="mari-kondo.html#tidy-your-files"><i class="fa fa-check"></i><b>3.1</b> Tidy your files</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="care-quality-api.html"><a href="care-quality-api.html"><i class="fa fa-check"></i><b>4</b> Care Quality API</a></li>
+<li class="chapter" data-level="5" data-path="road-accidents.html"><a href="road-accidents.html"><i class="fa fa-check"></i><b>5</b> Road Accidents</a><ul>
+<li class="chapter" data-level="5.1" data-path="road-accidents.html"><a href="road-accidents.html#google-data"><i class="fa fa-check"></i><b>5.1</b> Google data</a></li>
+<li class="chapter" data-level="5.2" data-path="road-accidents.html"><a href="road-accidents.html#dvla-data"><i class="fa fa-check"></i><b>5.2</b> DVLA data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="alfred-pennyworth.html"><a href="alfred-pennyworth.html"><i class="fa fa-check"></i><b>6</b> Alfred Pennyworth</a><ul>
+<li class="chapter" data-level="6.1" data-path="alfred-pennyworth.html"><a href="alfred-pennyworth.html#log-your-work"><i class="fa fa-check"></i><b>6.1</b> Log your work</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="elastigirl.html"><a href="elastigirl.html"><i class="fa fa-check"></i><b>7</b> Elastigirl</a><ul>
+<li class="chapter" data-level="7.1" data-path="elastigirl.html"><a href="elastigirl.html#tiki-taka-your-workflow"><i class="fa fa-check"></i><b>7.1</b> Tiki-taka your workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>8</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://data.education" target="blank">Published by Ning Lu</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A R discussion with Born in Bradford and Bradford NHS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="public-health-api" class="section level1">
+<h1><span class="header-section-number">2</span> Public Health API</h1>
+<p>Fingertips is a web platform that provides easy access to in-depth analysis of a wide range of health and health related data in thematic Profiles. All profiles can be accessed via:</p>
+<p><a href="http://fingertips.phe.org.uk/" class="uri">http://fingertips.phe.org.uk/</a></p>
+<p>The project was initially designed and built by the Eastern Region Public Health Observatory, and is now owned by PHE. The platform grows quickly both in functionality and content and is served by one common database called PHOLIO.</p>
+<p>Fingertips is used to create the public health outcome framework data tool, and the healthier lives application. It also underpins Health profiles, the mental health intelligence network tools, tobacco control profiles, the NCMP Data tool, NHS Health Check, National General Practice Profiles and the children and young people’s benchmarking tool among others.</p>
+<p>R package <a href="https://github.com/ropensci/fingertipsR">fingertipsR</a> is to interact with Public Health England’s Fingertips data tool.</p>
+<p>Stable version from CRAN</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;fingertipsR&quot;</span>)</a></code></pre></div>
+<p>The latest development version from github</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages(&quot;devtools&quot;)</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;rOpenSci/fingertipsR&quot;</span>,</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">                        <span class="dt">build_vignettes =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">                        <span class="dt">dependencies =</span> <span class="st">&quot;suggests&quot;</span>)</a></code></pre></div>
+<p>This is a workflow example from the R package to demonstrate how to download data for the indicators on Healthy Life Expectancy at Birth from the Public Health Outcomes Framework profile.</p>
+<p>The profiles() function presents all of the available profiles:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(fingertipsR)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">profs &lt;-<span class="st"> </span><span class="kw">profiles</span>()</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">profs &lt;-<span class="st"> </span>profs[<span class="kw">grepl</span>(<span class="st">&quot;Public Health Outcomes Framework&quot;</span>, profs<span class="op">$</span>ProfileName),]</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="kw">head</span>(profs)</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; # A tibble: 6 x 4</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;   ProfileID ProfileName                 DomainID DomainName                </span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;       &lt;int&gt; &lt;chr&gt;                          &lt;int&gt; &lt;chr&gt;                     </span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; 1        19 Public Health Outcomes Fr~    1.00e6 Overarching indicators    </span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; 2        19 Public Health Outcomes Fr~    1.00e6 Wider determinants of hea~</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; 3        19 Public Health Outcomes Fr~    1.00e6 Health improvement        </span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; 4        19 Public Health Outcomes Fr~    1.00e6 Health protection         </span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; 5        19 Public Health Outcomes Fr~    1.00e6 Healthcare and premature ~</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; 6        19 Public Health Outcomes Fr~    1.94e9 Supporting information</span></a></code></pre></div>
+<p>This table shows that the ProfileID for the Public Health Outcomes Framework is 19. This can be used as an input for the indicators() function:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">inds &lt;-<span class="st"> </span><span class="kw">indicators</span>(<span class="dt">ProfileID =</span> <span class="dv">19</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">print</span>(inds[<span class="kw">grepl</span>(<span class="st">&quot;Healthy&quot;</span>, inds<span class="op">$</span>IndicatorName), <span class="kw">c</span>(<span class="st">&quot;IndicatorID&quot;</span>, <span class="st">&quot;IndicatorName&quot;</span>)])</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># A tibble: 1 x 2</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  IndicatorID IndicatorName                          </a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">        <span class="op">&lt;</span>int<span class="op">&gt;</span><span class="st"> </span><span class="er">&lt;</span>fct<span class="op">&gt;</span><span class="st">                                  </span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="dv">1</span>       <span class="dv">90362</span> A01a <span class="op">-</span><span class="st"> </span>Healthy life expectancy at birth</a></code></pre></div>
+<p>Healthy Life Expectancy at Birth has the IndicatorID equal to 90362.</p>
+<p>Finally, the data can be extracted using the fingertips_data() function using that IndicatorID and filter() function in dplyr.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">fingertips_data</span>(<span class="dt">IndicatorID =</span> <span class="dv">90362</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">head</span>(df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(AreaName <span class="op">==</span><span class="st"> &quot;Yorkshire and the Humber region&quot;</span>))</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  IndicatorID                    IndicatorName ParentCode ParentName  AreaCode</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="dv">1</span>       <span class="dv">90362</span> Healthy life expectancy at birth  E92000001    England E12000003</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="dv">2</span>       <span class="dv">90362</span> Healthy life expectancy at birth  E92000001    England E12000003</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="dv">3</span>       <span class="dv">90362</span> Healthy life expectancy at birth  E92000001    England E12000003</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="dv">4</span>       <span class="dv">90362</span> Healthy life expectancy at birth  E92000001    England E12000003</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="dv">5</span>       <span class="dv">90362</span> Healthy life expectancy at birth  E92000001    England E12000003</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="dv">6</span>       <span class="dv">90362</span> Healthy life expectancy at birth  E92000001    England E12000003</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">                         AreaName AreaType    Sex      Age CategoryType Category Timeperiod</a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="dv">1</span> Yorkshire and the Humber region   Region   Male All ages         <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">     </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">  </span><span class="dv">2009</span> <span class="op">-</span><span class="st"> </span><span class="dv">11</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="dv">2</span> Yorkshire and the Humber region   Region Female All ages         <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">     </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">  </span><span class="dv">2009</span> <span class="op">-</span><span class="st"> </span><span class="dv">11</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="dv">3</span> Yorkshire and the Humber region   Region   Male All ages         <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">     </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">  </span><span class="dv">2010</span> <span class="op">-</span><span class="st"> </span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="dv">4</span> Yorkshire and the Humber region   Region Female All ages         <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">     </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">  </span><span class="dv">2010</span> <span class="op">-</span><span class="st"> </span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="dv">5</span> Yorkshire and the Humber region   Region   Male All ages         <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">     </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">  </span><span class="dv">2011</span> <span class="op">-</span><span class="st"> </span><span class="dv">13</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="dv">6</span> Yorkshire and the Humber region   Region Female All ages         <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">     </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">  </span><span class="dv">2011</span> <span class="op">-</span><span class="st"> </span><span class="dv">13</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17">     Value LowerCI95<span class="fl">.0</span>limit UpperCI95<span class="fl">.0</span>limit LowerCI99<span class="fl">.8</span>limit UpperCI99<span class="fl">.8</span>limit Count</a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="dv">1</span> <span class="fl">60.84033</span>         <span class="fl">60.38649</span>         <span class="fl">61.29417</span>               <span class="ot">NA</span>               <span class="ot">NA</span>    <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="dv">2</span> <span class="fl">61.97605</span>         <span class="fl">61.51676</span>         <span class="fl">62.43533</span>               <span class="ot">NA</span>               <span class="ot">NA</span>    <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="dv">3</span> <span class="fl">60.90318</span>         <span class="fl">60.44972</span>         <span class="fl">61.35665</span>               <span class="ot">NA</span>               <span class="ot">NA</span>    <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="dv">4</span> <span class="fl">61.78648</span>         <span class="fl">61.30470</span>         <span class="fl">62.26827</span>               <span class="ot">NA</span>               <span class="ot">NA</span>    <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="dv">5</span> <span class="fl">60.95582</span>         <span class="fl">60.47015</span>         <span class="fl">61.44150</span>               <span class="ot">NA</span>               <span class="ot">NA</span>    <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="dv">6</span> <span class="fl">61.60701</span>         <span class="fl">61.10430</span>         <span class="fl">62.10971</span>               <span class="ot">NA</span>               <span class="ot">NA</span>    <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb5-24" data-line-number="24">  Denominator Valuenote RecentTrend ComparedtoEnglandvalueorpercentiles</a>
+<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="dv">1</span>          <span class="ot">NA</span>      <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">        </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">                               </span>Worse</a>
+<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="dv">2</span>          <span class="ot">NA</span>      <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">        </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">                               </span>Worse</a>
+<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="dv">3</span>          <span class="ot">NA</span>      <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">        </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">                               </span>Worse</a>
+<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="dv">4</span>          <span class="ot">NA</span>      <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">        </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">                               </span>Worse</a>
+<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="dv">5</span>          <span class="ot">NA</span>      <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">        </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">                               </span>Worse</a>
+<a class="sourceLine" id="cb5-30" data-line-number="30"><span class="dv">6</span>          <span class="ot">NA</span>      <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">        </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">                               </span>Worse</a>
+<a class="sourceLine" id="cb5-31" data-line-number="31">  ComparedtoRegionvalueorpercentiles TimeperiodSortable Newdata Comparedtogoal</a>
+<a class="sourceLine" id="cb5-32" data-line-number="32"><span class="dv">1</span>                       Not compared           <span class="dv">20090000</span>    <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">           </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-33" data-line-number="33"><span class="dv">2</span>                       Not compared           <span class="dv">20090000</span>    <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">           </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-34" data-line-number="34"><span class="dv">3</span>                       Not compared           <span class="dv">20100000</span>    <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">           </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-35" data-line-number="35"><span class="dv">4</span>                       Not compared           <span class="dv">20100000</span>    <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">           </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-36" data-line-number="36"><span class="dv">5</span>                       Not compared           <span class="dv">20110000</span>    <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">           </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-37" data-line-number="37"><span class="dv">6</span>                       Not compared           <span class="dv">20110000</span>    <span class="op">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span><span class="st">           </span><span class="er">&lt;</span><span class="ot">NA</span><span class="op">&gt;</span></a></code></pre></div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mari-kondo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bibR.pdf", "bibR.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
