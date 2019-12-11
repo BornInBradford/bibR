@@ -1,5 +1,5 @@
 --- 
-title: "A R discussion with Born in Bradford and Bradford NHS"
+title: "R exploration 🚀 with Born in Bradford and Bradford NHS"
 author: "Ning Lu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -7,9 +7,9 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a minimal example for R discussion."
+description: "This is a minimal example for R training and exploration."
 ---
 
 # Mission
 
-This is a collection of R discussion in relation to Born in Bradford and Bradford NHS.  
+This is a collection of R training and exploration in relation to Born in Bradford and Bradford NHS.  
